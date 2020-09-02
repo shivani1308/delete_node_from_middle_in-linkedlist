@@ -1,0 +1,24 @@
+iBegin:
+    If (head == NULL) then
+        write ('List is already empty')
+    End if
+    Else then
+        toDelete ← head
+        prevNode ← head
+        For i←2 to n do
+            prevNode ← toDelete
+            toDelete ← toDelete.next
+            If (toDelete == NULL) then
+                break
+            End if
+        End for
+        If (toDelete != NULL) then
+            If (toDelete == head) then
+                head ← head.next
+            End if
+            prevNode.next ← toDelete.next
+            toDelete.next ← NULL
+            unalloc (toDelete)
+        End if
+    End else
+End
